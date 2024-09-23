@@ -20,7 +20,7 @@ public class SignUpPage {
     public void registerAccount(){
         signupPageObject.name.sendKeys("Birender Kumar");
         signupPageObject.email.sendKeys("birender.cdac@gmail.com");
-        signupPageObject.password.sendKeys("Vtemp123#");
+        signupPageObject.password.sendKeys("******");
 
         waitExecuter.waitUntilElementPresent(signupPageObject.recaptcha_checkbox);
         waitExecuter.waitUntilElementClickable(signupPageObject.recaptcha_checkbox);
