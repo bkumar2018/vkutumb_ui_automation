@@ -29,4 +29,10 @@ public class HomePage {
 	public void gotoHomePage(String homePageUrl){
 		driver.get(homePageUrl);
 	}
+
+	public void clickOnSignUpBtn(){
+		homePageObject.signup.isDisplayed();
+		homePageObject.signup.isEnabled();
+		homePageObject.signup.click();
+	}
 }
