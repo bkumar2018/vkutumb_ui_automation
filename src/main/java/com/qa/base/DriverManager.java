@@ -4,6 +4,8 @@ import java.util.Collections;
 import java.util.Properties;
 import java.util.logging.Level;
 
+import com.qa.enums.BrowsersEnum;
+import com.qa.enums.ConfigPropertiesEnum;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -21,7 +23,7 @@ public class DriverManager {
 	
 	public WebDriver InitilizeDriver(String browser){
 		
-		if(browser.equalsIgnoreCase("chrome")){
+		if(browser.equalsIgnoreCase(BrowsersEnum.CHROME.name().toLowerCase())){
 			driver = new ChromeDriver(getChromeOptions());
 			driver.manage().window().maximize();
 
@@ -29,7 +31,7 @@ public class DriverManager {
 			//driver.get(ConfigReader.readBaseConfig().getProperty(ConfigConstants.ApplicationConstants.URL));
 			//driver.get(url);
 
-		}else if(browser.equalsIgnoreCase("firfox")) {
+		}else if(browser.equalsIgnoreCase(BrowsersEnum.FIREFOX.name().toLowerCase())) {
 			//TBD
 		}else{
 			System.out.println("Given browser not supported");			

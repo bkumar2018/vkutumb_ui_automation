@@ -2,6 +2,7 @@ package com.qa.base;
 
 import java.util.Properties;
 
+import com.qa.enums.ConfigPropertiesEnum;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
@@ -13,6 +14,9 @@ public class BaseClass {
 	
 	public static WebDriver driver;
 
+	protected BaseClass(){
+
+	}
 	
 	@BeforeSuite
 	public void setup(){

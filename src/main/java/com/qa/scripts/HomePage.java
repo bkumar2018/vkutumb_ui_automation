@@ -1,10 +1,10 @@
 package com.qa.scripts;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Select;
 
 import com.qa.pagefactory.HomePageObject;
 import com.qa.utils.WaitExecuter;
+import org.testng.Assert;
 
 public class HomePage {
 	
@@ -34,5 +34,16 @@ public class HomePage {
 		homePageObject.signup.isDisplayed();
 		homePageObject.signup.isEnabled();
 		homePageObject.signup.click();
+	}
+
+
+	public boolean checkAllTabs(){
+
+		Assert.assertTrue(homePageObject.book.isDisplayed());
+		Assert.assertTrue(homePageObject.pricing.isDisplayed());
+		Assert.assertTrue(homePageObject.aboutus.isDisplayed());
+		Assert.assertTrue(homePageObject.contactus.isDisplayed());
+		Assert.assertTrue(homePageObject.blogs.isDisplayed());
+		return true;
 	}
 }
