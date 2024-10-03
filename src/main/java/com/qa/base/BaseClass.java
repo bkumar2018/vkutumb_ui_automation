@@ -22,9 +22,9 @@ public class BaseClass {
 	public void setup(){
 		DriverManager driverManager = new DriverManager();
 		Properties prop = ConfigReader.readConfigPropertiesFile();
-		String browser = prop.getProperty("browser");
+		String browser = prop.getProperty(ConfigPropertiesEnum.BROWSER.name().toLowerCase());
 		driver = driverManager.InitilizeDriver(browser);
-		driver.get(prop.getProperty("url"));
+		driver.get(prop.getProperty(ConfigPropertiesEnum.URL.name().toLowerCase()));
 		
 	}
 	

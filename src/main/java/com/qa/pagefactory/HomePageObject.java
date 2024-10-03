@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class HomePageObject {
 
 	@FindBy(xpath = "//a[@href='/home']")
@@ -30,6 +32,9 @@ public class HomePageObject {
 
 	@FindBy(xpath = "//a[@href='/signup']")
 	public WebElement signup;
+
+	@FindBy(xpath = "//ul[contains(@class,'chakra-stack nav-left')]//a")
+	public List<WebElement> homeTabs;
 
 	public HomePageObject(WebDriver driver) {
 		PageFactory.initElements(driver, this);

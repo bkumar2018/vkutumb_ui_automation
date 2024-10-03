@@ -4,7 +4,10 @@ import org.openqa.selenium.WebDriver;
 
 import com.qa.pagefactory.HomePageObject;
 import com.qa.utils.WaitExecuter;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
+import java.util.ArrayList;
 
 public class HomePage {
 	
@@ -45,5 +48,26 @@ public class HomePage {
 		Assert.assertTrue(homePageObject.contactus.isDisplayed());
 		Assert.assertTrue(homePageObject.blogs.isDisplayed());
 		return true;
+	}
+
+
+	public void getAllTabs(){
+
+		String[] arrOfTabs = {"Book", "Pricing", "About Us","Contact Us", "Blogs"};
+		int i=0;
+		if(homePageObject.homeTabs.size() != 0)
+		{
+			System.out.println(homePageObject.homeTabs.size()+ " Elements size found by anchor TagName \n");
+
+			for(WebElement inputElement : homePageObject.homeTabs)
+			{
+				System.out.println(inputElement.getText());
+				Assert.assertEquals(inputElement.getText(),arrOfTabs[i]);
+				i++;
+			}
+		}
+
+
+
 	}
 }
