@@ -1,3 +1,6 @@
+
+#The publish job will only run after the build job successfully completes (due to needs: [build]) and after all of the rules (including required reviewers) for the environment called production pass (due to environment: production).
+
 on:
   push:
     branches:
